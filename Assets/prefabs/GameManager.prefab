@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6471927927153853059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6489510945955334926}
+  - component: {fileID: 6152589972174018638}
+  - component: {fileID: 1013333563227057267}
+  - component: {fileID: 3392830638561980859}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6489510945955334926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6471927927153853059}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -73.39197, y: 4.868525, z: 175.3534}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6152589972174018638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6471927927153853059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009c4fcf16fe348f4a3dad3d4b11a96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  levelManager: {fileID: 1013333563227057267}
+  inPlay: 0
+  LEVEL_DELAY: 1
+--- !u!114 &1013333563227057267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6471927927153853059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2926f1b37a04b7fbf9d6e91c5c2059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetLarge: {fileID: 7471879035884192529, guid: b3b0c207f590e47408a509dcca76cdb9,
+    type: 3}
+  planetMedium: {fileID: 1551660697583350633, guid: 601dcce23601b4edea5be0ae5839d3a4,
+    type: 3}
+  planetSmall: {fileID: 2031243208583044065, guid: e7c9d2e9c52274fc299d07c6b9b6eacd,
+    type: 3}
+  shipPrefab: {fileID: 8460521286018616303, guid: 25d14b6a53d994a379880b5c59615701,
+    type: 3}
+  homePrefab: {fileID: 1536240552505390298, guid: c5b21085280f64b4b9ee955a789614ae,
+    type: 3}
+  planets: []
+  planetFuel: 2000
+  distanceModifier: 1
+--- !u!114 &3392830638561980859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6471927927153853059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22e6222b0877497ba544ffee2964644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
