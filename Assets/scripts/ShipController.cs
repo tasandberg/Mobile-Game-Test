@@ -63,6 +63,28 @@ public class ShipController : MonoBehaviour
         }
     }
 
+    private float AutoPilotDistanceSpeedModifier()
+    {
+        Vector3 colliderEdge = autoPilotTarget.GetComponent<SphereCollider>().ClosestPoint(transform.position);
+        float distanceToTarget = Vector3.Distance(transform.position, colliderEdge);
+        float stoppingPoint = 100f;
+
+        // Start slowing down within 300 units
+        float modifier;
+        if (distanceToTarget < 1000f)
+        {
+            modifier = (distanceToTarget - stoppingPoint) / stoppingPoint;
+        }
+        else
+        {
+            modifier = 1f;
+        }
+
+        Debug.Log("Distance " + distanceToTarget + ", Modifier " + modifier);
+
+        return modifier;
+    }
+
     void FixedUpdate()
     {
         // Ship spins wildly if mouse is moving on start
@@ -76,7 +98,7 @@ public class ShipController : MonoBehaviour
         //Press Right Mouse Button to accelerate
         bool isAccelerating = useMouse && Input.GetMouseButton(1) || verticalInput > 0.2f || onAutoPilot;
 
-        float accelerationModifier = onAutoPilot ? 1f : verticalInput;
+        float accelerationModifier = onAutoPilot ? AutoPilotDistanceSpeedModifier() : verticalInput;
         speed = GetSpeed(isAccelerating, accelerationModifier);
 
         //Set moveDirection to the vertical axis (up and down keys) * speed
@@ -194,7 +216,7 @@ public class ShipController : MonoBehaviour
         {
             afterburner.Stop(true);
             thrusterTime = 0f;
-            return Mathf.Lerp(speed, normalSpeed, Time.deltaTime * 10);
+            return Mathf.Lerp(speed, normalSpeed, Time.deltaTime * 4);
         }
     }
 }
